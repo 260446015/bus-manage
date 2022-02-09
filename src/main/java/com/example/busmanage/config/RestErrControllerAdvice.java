@@ -32,17 +32,17 @@ public class RestErrControllerAdvice {
         response.getOutputStream().write(error.toString().getBytes(StandardCharsets.UTF_8));
     }
 
-    protected ApiResult handleRequest(BindingResult bindingResult) {
+    private ApiResult handleRequest(BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             List<FieldError> fieldErrors = bindingResult.getFieldErrors();
             fieldErrors.forEach(fieldError -> {
                 //日志打印不符合校验的字段名和错误提示
                 log.error("error field is : {} ,message is : {}", fieldError.getField(), fieldError.getDefaultMessage());
             });
-            for (int i = 0; i < fieldErrors.size(); i++) {
+            for (FieldError fieldError : fieldErrors) {
                 //控制台打印不符合校验的字段名和错误提示
-                log.error("error field is :" + fieldErrors.get(i).getField() + ",message is :" + fieldErrors.get(i).getDefaultMessage());
-                return new ApiResult().setCode(-1).setMessage(fieldErrors.get(i).getDefaultMessage());
+                log.error("error field is :" + fieldError.getField() + ",message is :" + fieldError.getDefaultMessage());
+                return new ApiResult().setCode(-1).setMessage(fieldError.getDefaultMessage());
             }
         }
         return null;

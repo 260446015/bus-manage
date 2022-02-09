@@ -1,6 +1,10 @@
 package com.example.busmanage.entity;
 
-import com.example.busmanage.dto.ColorEnum;
+import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.example.busmanage.enums.ColorEnum;
+import com.example.busmanage.enums.BusStatus;
+import com.example.busmanage.enums.BusType;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -15,7 +19,7 @@ public class Bus {
 
     @Id
     private String id;
-    @NotEmpty(message = "姓名不能为空")
+    @NotEmpty(message = "车辆名称不能为空")
     private String name;
     @NotEmpty(message = "车牌号不能为空")
     private String busNum;
@@ -26,12 +30,4 @@ public class Bus {
     @Column(columnDefinition = "varchar(10) not null")
     private BusStatus busStatus;
     private Boolean online;
-
-    enum BusType{
-        TRUCK,CAR,BUS
-    }
-
-    enum BusStatus {
-        OK,ERR
-    }
 }

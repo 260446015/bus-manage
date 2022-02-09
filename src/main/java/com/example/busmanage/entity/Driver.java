@@ -16,6 +16,8 @@ public class Driver {
     @Id
     private String id;
     private String name;
+    private int age;
     private String mobile;
     private String address;
+    private Boolean outerOrInner;
 }

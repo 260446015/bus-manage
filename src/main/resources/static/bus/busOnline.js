@@ -51,7 +51,7 @@ function showBusOnline(_pageNum, _pageSize) {
                 var arr = res.data.dataList;
                 for (var i = 0; i < arr.length; i++) {
                     var id = arr[i].id.toString();
-                    html += '<tr><td><input type="checkbox" /></td><td>' + id + '</td><td>' + arr[i].name + '</a></td>' +
+                    html += '<tr><td><input type="checkbox" /></td><td>' + id + '</td><td>' + arr[i].name + '</a></td><td>'+arr[i].busName+'</td><td>'+arr[i].busNum+'</td><td>'+arr[i].busType+'</td><td>'+arr[i].outerOrInner+'</td><td>'+arr[i].createTime+'</td>' +
                         '<td><div class="am-btn-toolbar"><div class="am-btn-group am-btn-group-xs"><button type="button" class="am-btn am-btn-default edit" onclick="showEditTable(this)"><span class="am-icon-pencil-square-o"></span>编辑</button>' +
                         '<button class="am-btn am-btn-default am-btn-xs am-text-danger delete"><span class="am-icon-trash-o"></span> 删除</button></div></div></td></tr>';
                 }

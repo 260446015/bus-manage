@@ -23,7 +23,7 @@ public class BusController {
 
     @PostMapping
     public ApiResult save(@RequestBody @Validated Bus bus) {
-        busService.saveOrUpdate(null);
+        busService.saveOrUpdate(bus);
         return ApiResult.ok();
     }
 

@@ -59,6 +59,12 @@
                             <th class="table-check"><input type="checkbox"/></th>
                             <th class="table-id">ID</th>
                             <th class="table-title">车辆名称</th>
+                            <th class="table-title">车牌号</th>
+                            <th class="table-title">车型</th>
+                            <th class="table-title">颜色</th>
+                            <th class="table-title">车辆状态</th>
+                            <th class="table-title">是否出车</th>
+                            <th class="table-title">操作</th>
                         </tr>
                         </thead>
                         <tbody id="Bus">
@@ -87,8 +93,54 @@
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">车辆名称</label>
                         <div class="col-sm-10">
-                            <input type="hidden" name="id" id="id"/>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="车辆名称">
+                            <input type="hidden" name="id" id="id" class="attr"/>
+                            <input type="text" class="form-control attr" name="name" id="name" placeholder="车辆名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">车牌号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control attr" name="busNum" id="busNum" placeholder="车牌号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">车型</label>
+                        <div class="col-sm-10">
+                            <select name="busType" class="attr">
+                                <option value="货车">货车</option>
+                                <option value="小汽车">小汽车</option>
+                                <option value="客车">客车</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">颜色</label>
+                        <div class="col-sm-10">
+                            <select name="colorEnum" class="attr">
+                                <option value="黄色">黄色</option>
+                                <option value="绿色">绿色</option>
+                                <option value="红色">红色</option>
+                                <option value="白色">白色</option>
+                                <option value="黑色">黑色</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">车辆状态</label>
+                        <div class="col-sm-10">
+                            <select name="busStatus" class="attr">
+                                <option value="正常">正常</option>
+                                <option value="维修中">维修中</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">是否出车</label>
+                        <div class="col-sm-10">
+                            <select name="online" class="attr">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">

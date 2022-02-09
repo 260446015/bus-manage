@@ -17,4 +17,9 @@ public class LoginController {
     public String main(){
         return "index";
     }
+
+    @GetMapping("index.html")
+    public String index(){
+        return "index";
+    }
 }
