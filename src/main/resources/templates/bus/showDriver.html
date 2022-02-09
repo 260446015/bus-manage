@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>驾驶员管理</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+</head>
+<body>
+<div th:replace="common/include :: header"></div>
+<div class="am-cf admin-main">
+    <div th:replace="common/include :: sidebar"></div>
+    <div class="admin-content">
+
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">驾驶员管理</strong> /
+                <small>Table</small>
+            </div>
+        </div>
+
+        <div class="am-g">
+            <div class="am-u-md-6 am-cf">
+                <div class="am-fl am-cf">
+                    <div class="am-btn-toolbar am-fl">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default add" data-toggle="modal" data-target="#add"><span class="am-icon-plus"></span>
+                                新增
+                            </button>
+                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除
+                            </button>
+                        </div>
+
+                        <div class="am-form-group am-margin-left am-fl">
+                            <select>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-u-md-3 am-cf">
+                <div class="am-fr">
+                    <div class="am-input-group am-input-group-sm">
+                        <input type="text" class="am-form-field">
+                        <span class="am-input-group-btn">
+                  <button class="am-btn am-btn-default" type="button">搜索</button>
+                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <form class="am-form">
+                    <table class="am-table am-table-striped am-table-hover table-main">
+                        <thead>
+                        <tr>
+                            <th class="table-check"><input type="checkbox"/></th>
+                            <th class="table-id">ID</th>
+                            <th class="table-title">姓名</th>
+                        </tr>
+                        </thead>
+                        <tbody id="Driver">
+
+                        </tbody>
+                    </table>
+                    <div class="page-box clearfix">
+                        <ul class="page pull-right" id="page"></ul>
+                    </div>
+                    <hr/>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- content end -->
+</div>
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">编辑驾驶员</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">驾驶员姓名</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="id" id="id"/>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="驾驶员姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-default" onclick="saveDriver()">提交</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<div th:replace="common/include :: script"></div>
+<div th:replace="common/include :: link"></div>
+<script src="/bus/driver.js"></script>
+</body>
+</html>
