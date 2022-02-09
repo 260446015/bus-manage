@@ -51,4 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
+
+    public static void main(String[] args) {
+        System.out.println(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("123"));
+    }
 }

@@ -1,16 +1,11 @@
 package com.example.busmanage.entity;
 
-import lombok.AllArgsConstructor;
+import com.example.busmanage.dto.ColorEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 @Data
 @Accessors(chain = true)
@@ -22,6 +17,21 @@ public class Bus {
     private String id;
     @NotEmpty(message = "姓名不能为空")
     private String name;
-    @NotEmpty(message = "idkey不能为空")
-    private String idKey;
+    @NotEmpty(message = "车牌号不能为空")
+    private String busNum;
+    @Column(columnDefinition = "varchar(10) not null")
+    private BusType busType;
+    @Column(columnDefinition = "varchar(10)")
+    private ColorEnum colorEnum;
+    @Column(columnDefinition = "varchar(10) not null")
+    private BusStatus busStatus;
+    private Boolean online;
+
+    enum BusType{
+        TRUCK,CAR,BUS
+    }
+
+    enum BusStatus {
+        OK,ERR
+    }
 }
