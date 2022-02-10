@@ -8,6 +8,8 @@ import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.entity.Driver;
 import com.example.busmanage.service.impl.DriverServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/driver")
@@ -20,7 +22,10 @@ public class DriverController {
     }
 
     @PostMapping
-    public ApiResult save(@RequestBody Driver driver) {
+    public ApiResult save(@RequestBody @Validated Driver driver) {
+        if(StringUtils.isEmpty(driver.getId())){
+            driver.setOnline(false);
+        }
         driverService.saveOrUpdate(driver);
         return ApiResult.ok();
     }

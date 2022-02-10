@@ -1,6 +1,6 @@
 function saveDriver() {
     var req = {};
-    $(".form-group").find("input").each(function (i, item) {
+    $(".attr").each(function (i, item) {
         console.log($(this).val())
         if (item.type === "radio") {
             if(item.checked){
@@ -18,7 +18,9 @@ function saveDriver() {
         url: '/api/driver',
         success: function (res) {
             alert(res.message);
-            window.location.href = '/page/bus/showDriver.html';
+            if(res.code === 0){
+                window.location.href = '/page/bus/showDriver.html';
+            }
         }
     })
 }
@@ -51,7 +53,7 @@ function showDriver(_pageNum, _pageSize) {
                 var arr = res.data.dataList;
                 for (var i = 0; i < arr.length; i++) {
                     var id = arr[i].id.toString();
-                    html += '<tr><td><input type="checkbox" /></td><td>' + id + '</td><td>' + arr[i].name + '</a></td>' +
+                    html += '<tr><td><input type="checkbox" /></td><td>' + id + '</td><td>' + arr[i].name + '</a></td><td>'+arr[i].sex+'</td><td>'+arr[i].age+'</td><td>'+arr[i].address+'</td><td>'+arr[i].online+'</td>' +
                         '<td><div class="am-btn-toolbar"><div class="am-btn-group am-btn-group-xs"><button type="button" class="am-btn am-btn-default edit" onclick="showEditTable(this)"><span class="am-icon-pencil-square-o"></span>编辑</button>' +
                         '<button class="am-btn am-btn-default am-btn-xs am-text-danger delete"><span class="am-icon-trash-o"></span> 删除</button></div></div></td></tr>';
                 }
@@ -106,7 +108,7 @@ function showEditTable(e) {
     var id = $(e).parents('tr').children().eq(1).html();
     $('#id').val(id);
     $.get("/api/driver/"+id,function (res) {
-        $('#add').find('input').each(function (i, item) {
+        $('.attr').each(function (i, item) {
             for(var k in res.data ){
                 //遍历packJson 对象的每个key/value对,k为key
                 if(k === item.name){
@@ -114,8 +116,12 @@ function showEditTable(e) {
                         if(item.value === res.data[k].toString()){
                             item.checked = true;
                         }
-                    }else if(item.type === 'password'){
-
+                    }else if(item.type === 'select-one'){
+                        $(item).children().each(function (i, optionEle) {
+                            if(optionEle.innerHTML === res.data[k].toString()){
+                                optionEle.selected = true;
+                            }
+                        })
                     }else{
                         item.value = res.data[k];
                     }

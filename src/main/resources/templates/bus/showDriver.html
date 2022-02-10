@@ -64,6 +64,11 @@
                             <th class="table-check"><input type="checkbox"/></th>
                             <th class="table-id">ID</th>
                             <th class="table-title">姓名</th>
+                            <th class="table-title">性别</th>
+                            <th class="table-title">年龄</th>
+                            <th class="table-title">居住地址</th>
+                            <th class="table-title">出车状态</th>
+                            <th class="table-title">操作</th>
                         </tr>
                         </thead>
                         <tbody id="Driver">
@@ -93,8 +98,35 @@
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">驾驶员姓名</label>
                         <div class="col-sm-10">
-                            <input type="hidden" name="id" id="id"/>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="驾驶员姓名">
+                            <input type="hidden" name="id" id="id" class="attr"/>
+                            <input type="text" class="form-control attr" name="name" id="name" placeholder="驾驶员姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex" class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <select name="sex" id="sex" class="attr">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="col-sm-2 control-label">驾驶员年龄</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control attr" name="age" id="age" placeholder="驾驶员年龄">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile" class="col-sm-2 control-label">驾驶员手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control attr" name="mobile" id="mobile" placeholder="驾驶员手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">驾驶员家庭地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control attr" name="address" id="address" placeholder="驾驶员家庭地址">
                         </div>
                     </div>
                     <div class="form-group">

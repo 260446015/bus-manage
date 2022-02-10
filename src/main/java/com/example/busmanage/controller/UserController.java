@@ -9,6 +9,7 @@ import com.example.busmanage.entity.User;
 import com.example.busmanage.service.impl.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/user")
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ApiResult save(@RequestBody User user) {
+    public ApiResult save(@RequestBody @Validated User user) {
         String encode = passwordEncoder.encode(user.getPassword());
         user.setPassword(encode);
         user.setIsAccountNonExpired(false).setIsAccountNonLocked(false)

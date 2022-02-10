@@ -8,6 +8,7 @@ import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.entity.BusOnline;
 import com.example.busmanage.service.impl.BusonlineServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/busonline")
@@ -20,7 +21,7 @@ public class BusonlineController {
     }
 
     @PostMapping
-    public ApiResult save(@RequestBody BusOnline busOnline) {
+    public ApiResult save(@RequestBody @Validated BusOnline busOnline) {
         busonlineServiceImpl.saveOrUpdate(busOnline);
         return ApiResult.ok();
     }
