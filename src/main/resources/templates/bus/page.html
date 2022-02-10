@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div th:fragment="content">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>一些常用模块</small></div>
+    </div>
+
+    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>新增页面<br/>2300</a></li>
+        <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>成交订单<br/>308</a></li>
+        <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>昨日访问<br/>80082</a></li>
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>在线用户<br/>3000</a></li>
+    </ul>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <table class="am-table am-table-bd am-table-striped admin-content-table">
+                <thead>
+                <tr>
+                    <th>ID</th><th>用户名</th><th>最后成交任务</th><th>成交订单</th><th>管理</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>1</td><td>John Clark</td><td><a href="#">Business management</a></td> <td><span class="am-badge am-badge-success">+20</span></td>
+                    <td>
+                        <div class="am-dropdown" data-am-dropdown>
+                            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                            <ul class="am-dropdown-content">
+                                <li><a href="#">1. 编辑</a></li>
+                                <li><a href="#">2. 下载</a></li>
+                                <li><a href="#">3. 删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>2</td><td>风清扬</td><td><a href="#">公司LOGO设计</a> </td><td><span class="am-badge am-badge-danger">+2</span></td>
+                    <td>
+                        <div class="am-dropdown" data-am-dropdown>
+                            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                            <ul class="am-dropdown-content">
+                                <li><a href="#">1. 编辑</a></li>
+                                <li><a href="#">2. 下载</a></li>
+                                <li><a href="#">3. 删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>3</td><td>詹姆斯</td><td><a href="#">开发一款业务数据软件</a></td><td><span class="am-badge am-badge-warning">+10</span></td>
+                    <td>
+                        <div class="am-dropdown" data-am-dropdown>
+                            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                            <ul class="am-dropdown-content">
+                                <li><a href="#">1. 编辑</a></li>
+                                <li><a href="#">2. 下载</a></li>
+                                <li><a href="#">3. 删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr><td>4</td><td>云适配</td><td><a href="#">适配所有网站</a></td><td><span class="am-badge am-badge-secondary">+50</span></td>
+                    <td>
+                        <div class="am-dropdown" data-am-dropdown>
+                            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                            <ul class="am-dropdown-content">
+                                <li><a href="#">1. 编辑</a></li>
+                                <li><a href="#">2. 下载</a></li>
+                                <li><a href="#">3. 删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5</td><td>呵呵呵</td>
+                    <td><a href="#">基兰会获得BUFF</a></td>
+                    <td><span class="am-badge">+22</span></td>
+                    <td>
+                        <div class="am-dropdown" data-am-dropdown>
+                            <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                            <ul class="am-dropdown-content">
+                                <li><a href="#">1. 编辑</a></li>
+                                <li><a href="#">2. 下载</a></li>
+                                <li><a href="#">3. 删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-md-6">
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-1'}">文件上传<span class="am-icon-chevron-down am-fr" ></span></div>
+                <div class="am-panel-bd am-collapse am-in" id="collapse-panel-1">
+                    <ul class="am-list admin-content-file">
+                        <li>
+                            <strong><span class="am-icon-upload"></span> Kong-cetian.Mp3</strong>
+                            <p>3.3 of 5MB - 5 mins - 1MB/Sec</p>
+                            <div class="am-progress am-progress-striped am-progress-sm am-active">
+                                <div class="am-progress-bar am-progress-bar-success" style="width: 82%">82%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong><span class="am-icon-check"></span> 好人-cetian.Mp3</strong>
+                            <p>3.3 of 5MB - 5 mins - 3MB/Sec</p>
+                        </li>
+                        <li>
+                            <strong><span class="am-icon-check"></span> 其实都没有.Mp3</strong>
+                            <p>3.3 of 5MB - 5 mins - 3MB/Sec</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-2'}">浏览器统计<span class="am-icon-chevron-down am-fr" ></span></div>
+                <div id="collapse-panel-2" class="am-in">
+                    <table class="am-table am-table-bd am-table-bdrs am-table-striped am-table-hover">
+                        <tbody>
+                        <tr>
+                            <th class="am-text-center">#</th>
+                            <th>浏览器</th>
+                            <th>访问量</th>
+                        </tr>
+                        <tr>
+                            <td class="am-text-center"><img src="/assets/i/examples/admin-chrome.png" alt=""></td>
+                            <td>Google Chrome</td>
+                            <td>3,005</td>
+                        </tr>
+                        <tr>
+                            <td class="am-text-center"><img src="/assets/i/examples/admin-firefox.png" alt=""></td>
+                            <td>Mozilla Firefox</td>
+                            <td>2,505</td>
+                        </tr>
+                        <tr>
+                            <td class="am-text-center"><img src="/assets/i/examples/admin-ie.png" alt=""></td>
+                            <td>Internet Explorer</td>
+                            <td>1,405</td>
+                        </tr>
+                        <tr>
+                            <td class="am-text-center"><img src="/assets/i/examples/admin-opera.png" alt=""></td>
+                            <td>Opera</td>
+                            <td>4,005</td>
+                        </tr>
+                        <tr>
+                            <td class="am-text-center"><img src="/assets/i/examples/admin-safari.png" alt=""></td>
+                            <td>Safari</td>
+                            <td>505</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-u-md-6">
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-4'}">任务 task<span class="am-icon-chevron-down am-fr" ></span></div>
+                <div id="collapse-panel-4" class="am-panel-bd am-collapse am-in">
+                    <ul class="am-list admin-content-task">
+                        <li>
+                            <div class="admin-task-meta"> Posted on 25/1/2120 by John Clark</div>
+                            <div class="admin-task-bd">
+                                The starting place for exploring business management; helping new managers get started and experienced managers get better.
+                            </div>
+                            <div class="am-cf">
+                                <div class="am-btn-toolbar am-fl">
+                                    <div class="am-btn-group am-btn-group-xs">
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-check"></span></button>
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span></button>
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-times"></span></button>
+                                    </div>
+                                </div>
+                                <div class="am-fr">
+                                    <button type="button" class="am-btn am-btn-default am-btn-xs">删除</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="admin-task-meta"> Posted on 25/1/2120 by 呵呵呵</div>
+                            <div class="admin-task-bd">
+                                基兰和狗熊出现在不同阵营时。基兰会获得BUFF，“装甲熊憎恨者”。狗熊会获得BUFF，“时光老人憎恨者”。
+                            </div>
+                            <div class="am-cf">
+                                <div class="am-btn-toolbar am-fl">
+                                    <div class="am-btn-group am-btn-group-xs">
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-check"></span></button>
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span></button>
+                                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-times"></span></button>
+                                    </div>
+                                </div>
+                                <div class="am-fr">
+                                    <button type="button" class="am-btn am-btn-default am-btn-xs">删除</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-3'}">最近留言<span class="am-icon-chevron-down am-fr" ></span></div>
+                <div class="am-panel-bd am-collapse am-in am-cf" id="collapse-panel-3">
+                    <ul class="am-comments-list admin-content-comment">
+                        <li class="am-comment">
+                            <div class="am-comment-main">
+                                <header class="am-comment-hd">
+                                    <div class="am-comment-meta"><a href="#" class="am-comment-author">某人</a> 评论于 <time>2014-7-12 15:30</time></div>
+                                </header>
+                                <div class="am-comment-bd"><p>遵循 “移动优先（Mobile First）”、“渐进增强（Progressive enhancement）”的理念，可先从移动设备开始开发网站，逐步在扩展的更大屏幕的设备上，专注于最重要的内容和交互，很好。</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="am-comment">
+                            <div class="am-comment-main">
+                                <header class="am-comment-hd">
+                                    <div class="am-comment-meta"><a href="#" class="am-comment-author">某人</a> 评论于 <time>2014-7-12 15:30</time></div>
+                                </header>
+                                <div class="am-comment-bd"><p>有效减少为兼容旧浏览器的臃肿代码；基于 CSS3 的交互效果，平滑、高效。AMUI专注于现代浏览器（支持HTML5），不再为过时的浏览器耗费资源，为更有价值的用户提高更好的体验。</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <ul class="am-pagination am-fr admin-content-pagination">
+                        <li class="am-disabled"><a href="#">&laquo;</a></li>
+                        <li class="am-active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="bus">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">车辆管理</strong> / <small>Table</small></div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-md-6 am-cf">
+            <div class="am-fl am-cf">
+                <div class="am-btn-toolbar am-fl">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default add"><span class="am-icon-plus"></span> 新增</button>
+                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+
+                    <div class="am-form-group am-margin-left am-fl">
+                        <select class="select">
+                            <option value="option1">所有类别</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-u-md-3 am-cf">
+            <div class="am-fr">
+                <div class="am-input-group am-input-group-sm">
+                    <input type="text" class="am-form-field">
+                    <span class="am-input-group-btn">
+                  <button class="am-btn am-btn-default" type="button">搜索</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <form class="am-form">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-check"><input type="checkbox"/></th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">车辆名称</th>
+                        <th class="table-title">车牌号</th>
+                        <th class="table-title">车型</th>
+                        <th class="table-title">颜色</th>
+                        <th class="table-title">车辆状态</th>
+                        <th class="table-title">是否出车</th>
+                        <th class="table-title">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+                <div class="page-box clearfix">
+                    <ul class="page pull-right" id="page"></ul>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">编辑车辆</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">车辆名称</label>
+                            <div class="col-sm-10">
+                                <input type="hidden" name="id" id="id" class="attr"/>
+                                <input type="text" class="form-control attr" name="name" id="name" placeholder="车辆名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">车牌号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" name="busNum" id="busNum" placeholder="车牌号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">车型</label>
+                            <div class="col-sm-10">
+                                <select name="busType" class="attr">
+                                    <option value="货车">货车</option>
+                                    <option value="小汽车">小汽车</option>
+                                    <option value="客车">客车</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">颜色</label>
+                            <div class="col-sm-10">
+                                <select name="colorEnum" class="attr">
+                                    <option value="黄色">黄色</option>
+                                    <option value="绿色">绿色</option>
+                                    <option value="红色">红色</option>
+                                    <option value="白色">白色</option>
+                                    <option value="黑色">黑色</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">车辆状态</label>
+                            <div class="col-sm-10">
+                                <select name="busStatus" class="attr">
+                                    <option value="正常">正常</option>
+                                    <option value="维修中">维修中</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">是否出车</label>
+                            <div class="col-sm-10">
+                                <select name="online" class="attr">
+                                    <option value="true">是</option>
+                                    <option value="false">否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="HttpUtil.post(url,successUrl)">提交</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script>
+        const url = '/api/bus';
+        const successUrl = '/index.html?page=bus';
+    </script>
+</div>
+<!-- 系统管理 -->
+<div th:fragment="system">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">系统管理</strong> /
+            <small>Table</small>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-md-6 am-cf">
+            <div class="am-fl am-cf">
+                <div class="am-btn-toolbar am-fl">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default add" data-toggle="modal" data-target="#addSystem"><span class="am-icon-plus"></span>新增</button>
+                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除
+                        </button>
+                    </div>
+
+                    <div class="am-form-group am-margin-left am-fl">
+                        <select id="query">
+                            <option value="">所有</option>
+                            <option name="name" value="name">姓名</option>
+                            <option name="username" value="username">登录名</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-u-md-3 am-cf">
+            <div class="am-fr">
+                <div class="am-input-group am-input-group-sm">
+                    <input type="text" class="am-form-field" id="search">
+                    <span class="am-input-group-btn">
+                  <button class="am-btn am-btn-default" type="button" onclick="showSystem(1,10)">搜索</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <form class="am-form">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-check"><input type="checkbox"/></th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">姓名</th>
+                        <th class="table-type">登录名</th>
+                        <th class="table-type">是否启用</th>
+                        <th class="table-set">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+                <div class="page-box clearfix">
+                    <ul class="page pull-right" id="page"></ul>
+                </div>
+                <hr/>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">编辑管理员</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10">
+                                <input type="hidden" name="id" id="id" class="attr"/>
+                                <input type="text" class="form-control attr" name="name" id="name" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">登录名</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" name="username" id="username" placeholder="请输入登录名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control password attr" name="password"  id="password" placeholder="请输密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-check" class="col-sm-2 control-label">请再输入密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" name="rawPassword" class="form-control password-check" id="password-check" placeholder="请再输入密码" onblur="checkPassword()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-check" class="col-sm-2 control-label">操作</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="isEnabled" class="attr" value="true" checked>启用
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="isEnabled" class="attr"  value="false">停用
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="HttpUtil.post(url,successUrl)">提交</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script src="/bus/system.js"></script>
+    <script>
+        const url = '/api/user';
+        const successUrl = '/index.html?page=system';
+    </script>
+</div>
+
+<!-- 驾驶员 -->
+<div th:fragment="driver">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">驾驶员管理</strong> /
+            <small>Table</small>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-md-6 am-cf">
+            <div class="am-fl am-cf">
+                <div class="am-btn-toolbar am-fl">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default add"><span class="am-icon-plus"></span>
+                            新增
+                        </button>
+                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除
+                        </button>
+                    </div>
+
+                    <div class="am-form-group am-margin-left am-fl">
+                        <select>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-u-md-3 am-cf">
+            <div class="am-fr">
+                <div class="am-input-group am-input-group-sm">
+                    <input type="text" class="am-form-field">
+                    <span class="am-input-group-btn">
+                  <button class="am-btn am-btn-default" type="button">搜索</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <form class="am-form">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-check"><input type="checkbox"/></th>
+                        <th class="table-id">序号</th>
+                        <th class="table-title">姓名</th>
+                        <th class="table-title">性别</th>
+                        <th class="table-title">年龄</th>
+                        <th class="table-title">手机号</th>
+                        <th class="table-title">居住地址</th>
+                        <th class="table-title">出车状态</th>
+                        <th class="table-title">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+                <div class="page-box clearfix">
+                    <ul class="page pull-right" id="page"></ul>
+                </div>
+                <hr/>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">编辑驾驶员</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">驾驶员姓名</label>
+                            <div class="col-sm-10">
+                                <input type="hidden" name="id" id="id" class="attr"/>
+                                <input type="text" class="form-control attr" name="name" id="name" placeholder="驾驶员姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex" class="col-sm-2 control-label">性别</label>
+                            <div class="col-sm-10">
+                                <select name="sex" id="sex" class="attr">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="col-sm-2 control-label">驾驶员年龄</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" name="age" id="age" placeholder="驾驶员年龄">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile" class="col-sm-2 control-label">驾驶员手机号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" name="mobile" id="mobile" placeholder="驾驶员手机号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">驾驶员家庭地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" name="address" id="address" placeholder="驾驶员家庭地址">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="HttpUtil.post(url,successUrl)">提交</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script>
+        const url = '/api/driver';
+        const successUrl = '/index.html?page=driver';
+    </script>
+</div>
+
+<!-- 出车管理 -->
+<div th:fragment="busonline">
+    <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">出车管理</strong> / <small>Table</small></div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-md-6 am-cf">
+            <div class="am-fl am-cf">
+                <div class="am-btn-toolbar am-fl">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default add"><span class="am-icon-plus"></span> 新增</button>
+                        <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+
+                    <div class="am-form-group am-margin-left am-fl">
+                        <select class="select">
+                            <option value="option1">所有类别</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-u-md-3 am-cf">
+            <div class="am-fr">
+                <div class="am-input-group am-input-group-sm">
+                    <input type="text" class="am-form-field">
+                    <span class="am-input-group-btn">
+                  <button class="am-btn am-btn-default" type="button">搜索</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <form class="am-form">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-check"><input type="checkbox"/></th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">姓名</th>
+                        <th class="table-title">车辆名称</th>
+                        <th class="table-title">车牌号</th>
+                        <th class="table-title">车型</th>
+                        <th class="table-title">出车/入车</th>
+                        <th class="table-title">日期</th>
+                        <th class="table-title">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+                <div class="page-box clearfix">
+                    <ul class="page pull-right" id="page"></ul>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">编辑出车管理</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">人员名称</label>
+                            <div class="col-sm-10">
+                                <input type="hidden" name="driverId" class="attr"/>
+                                <input type="text" class="form-control attr" readonly="readonly" name="name" id="name" placeholder="人员名称" onclick="showSelectDriverModal()"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="busName" class="col-sm-2 control-label">车辆名称</label>
+                            <div class="col-sm-10">
+                                <input type="hidden" name="busId" class="attr"/>
+                                <input type="text" class="form-control attr" readonly="readonly" name="busName" id="busName" placeholder="车辆名称" onclick="showSelectBusModal()"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="busNum" class="col-sm-2 control-label">车牌号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" readonly="readonly" name="busNum" id="busNum" placeholder="车牌号">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="busType" class="col-sm-2 control-label">车辆类型</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control attr" readonly="readonly" name="busType" id="busType" placeholder="车辆类型">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="outerOrInner" class="col-sm-2 control-label">出车/入车</label>
+                            <div class="col-sm-10">
+                                <input type="radio" name="outerOrInner" class="attr">出车</input>
+                                <input type="radio" name="outerOrInner" class="attr">入车</input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="HttpUtil.post(url,successUrl)">提交</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div class="modal fade" id="selectBus" tabindex="-1" role="dialog" aria-labelledby="selectBusModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="selectBusModal">选择车辆</h4>
+                </div>
+                <div class="form-group content">
+
+                </div>
+
+<!--                <div th:include="bus/page :: bus"></div>-->
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="selectBus()">提交</button>
+                                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <div class="modal fade" id="selectDriver" tabindex="-1" role="dialog" aria-labelledby="selectDriverModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="selectDriverModal">选择人员</h4>
+                </div>
+                <div class="form-group driver-content">
+
+                </div>
+
+                <!--                <div th:include="bus/page :: bus"></div>-->
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="selectDriver()">提交</button>
+                                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script src="/bus/busonline.js"></script>
+    <script>
+        const url = '/api/busonline';
+        const successUrl = '/index.html?page=busonline';
+    </script>
+</div>
+</body>
+</html>

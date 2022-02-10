@@ -30,10 +30,10 @@
 <div th:fragment="sidebar">
     <div class="admin-sidebar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="/page/bus/showSystem.html"><span class="am-icon-share-square-o"></span>系统管理</a></li>
-            <li><a href="/page/bus/showBus.html"><span class="am-icon-pencil-square-o"></span>车辆管理</a></li>
-            <li><a href="/page/bus/showDriver.html"><span class="am-icon-arrows"></span>驾驶员管理</a></li>
-            <li><a href="/page/bus/showBusOnline.html"><span class="am-icon-table"></span>出车信息管理</a></li>
+            <li><a href="/index.html?page=system"><span class="am-icon-share-square-o"></span>系统管理</a></li>
+            <li><a href="/index.html?page=bus"><span class="am-icon-pencil-square-o"></span>车辆管理</a></li>
+            <li><a href="/index.html?page=driver"><span class="am-icon-arrows"></span>驾驶员管理</a></li>
+            <li><a href="/index.html?page=busonline"><span class="am-icon-table"></span>出车信息管理</a></li>
         </ul>
 
         <div class="am-panel am-panel-default admin-sidebar-panel">
@@ -53,6 +53,7 @@
     <script type="text/javascript" src="/assets/js/page.js"></script>
     <script src="/bootstrap/jquery.min.js"></script>
     <script src="/bootstrap/bootstrap.min.js"></script>
+    <script src="/bus/bus-common.js"></script>
 </div>
 <div th:fragment="link">
     <link rel="stylesheet" href="/assets/css/amazeui.min.css"/>

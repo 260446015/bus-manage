@@ -12,5 +12,6 @@ public class QueryDto {
     private String name;
     private String username;
     private String mobile;
+    private Boolean online;
 
 }

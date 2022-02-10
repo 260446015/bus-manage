@@ -3,6 +3,8 @@ package com.example.busmanage.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
@@ -19,7 +21,10 @@ public class LoginController {
     }
 
     @GetMapping("index.html")
-    public String index(){
-        return "index";
+    @ResponseBody
+    public ModelAndView index(String page,ModelAndView modelAndView){
+        modelAndView.addObject("page",page);
+        modelAndView.setViewName("index");
+        return modelAndView;
     }
 }
