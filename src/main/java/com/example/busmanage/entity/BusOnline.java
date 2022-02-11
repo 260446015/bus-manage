@@ -17,11 +17,10 @@ import java.util.Date;
 public class BusOnline {
     @Id
     private String id;
-    private String name;
-    private String busName;
-    private String busNum;
-    @Column(columnDefinition = "varchar(10) not null")
-    private BusType busType;
+    private String driverId;
+    private String busId;
     private Boolean outerOrInner;
     private Date createTime;
+    private Date innerTime;
+    private Date outerTime;
 }

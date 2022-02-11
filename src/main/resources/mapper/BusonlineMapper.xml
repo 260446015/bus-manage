@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.busmanage.mapper.BusonlineMapper">
+    <resultMap id="BusOnlineDTO" type="com.example.busmanage.dto.BusOnlineDTO">
+        <association property="bus" select="com.example.busmanage.mapper.BusMapper.selectById" column="bus_id"/>
+        <association property="driver" select="com.example.busmanage.mapper.DriverMapper.selectById" column="driver_id"/>
+    </resultMap>
+
+    <select id="pageWithCompose" resultMap="BusOnlineDTO">
+        select * from bus_online order by create_time desc
+    </select>
+    <select id="getComposeById" resultMap="BusOnlineDTO">
+        select * from bus_online where id = #{id}
+    </select>
+</mapper>

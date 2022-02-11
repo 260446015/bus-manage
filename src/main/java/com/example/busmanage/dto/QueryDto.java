@@ -13,5 +13,6 @@ public class QueryDto {
     private String username;
     private String mobile;
     private Boolean online;
+    private String busNum;
 
 }

@@ -257,8 +257,8 @@
                     </div>
 
                     <div class="am-form-group am-margin-left am-fl">
-                        <select class="select">
-                            <option value="option1">所有类别</option>
+                        <select class="select" id="query">
+                            <option value="busNum" name="busNum" selected>车牌号</option>
                         </select>
                     </div>
                 </div>
@@ -267,9 +267,9 @@
         <div class="am-u-md-3 am-cf">
             <div class="am-fr">
                 <div class="am-input-group am-input-group-sm">
-                    <input type="text" class="am-form-field">
+                    <input type="text" class="am-form-field"/>
                     <span class="am-input-group-btn">
-                  <button class="am-btn am-btn-default" type="button">搜索</button>
+                  <button class="am-btn am-btn-default search" type="button" id="search">搜索</button>
                 </span>
                 </div>
             </div>
@@ -317,13 +317,13 @@
                             <label for="name" class="col-sm-2 control-label">车辆名称</label>
                             <div class="col-sm-10">
                                 <input type="hidden" name="id" id="id" class="attr"/>
-                                <input type="text" class="form-control attr" name="name" id="name" placeholder="车辆名称">
+                                <input type="text" class="form-control attr" name="name" id="name" placeholder="车辆名称"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">车牌号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" name="busNum" id="busNum" placeholder="车牌号">
+                                <input type="text" class="form-control attr" name="busNum" id="busNum" placeholder="车牌号"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -413,7 +413,7 @@
         <div class="am-u-md-3 am-cf">
             <div class="am-fr">
                 <div class="am-input-group am-input-group-sm">
-                    <input type="text" class="am-form-field" id="search">
+                    <input type="text" class="am-form-field" id="search"/>
                     <span class="am-input-group-btn">
                   <button class="am-btn am-btn-default" type="button" onclick="showSystem(1,10)">搜索</button>
                 </span>
@@ -467,19 +467,19 @@
                         <div class="form-group">
                             <label for="username" class="col-sm-2 control-label">登录名</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" name="username" id="username" placeholder="请输入登录名">
+                                <input type="text" class="form-control attr" name="username" id="username" placeholder="请输入登录名"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-2 control-label">密码</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control password attr" name="password"  id="password" placeholder="请输密码">
+                                <input type="password" class="form-control password attr" name="password"  id="password" placeholder="请输密码"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password-check" class="col-sm-2 control-label">请再输入密码</label>
                             <div class="col-sm-10">
-                                <input type="password" name="rawPassword" class="form-control password-check" id="password-check" placeholder="请再输入密码" onblur="checkPassword()">
+                                <input type="password" name="rawPassword" class="form-control password-check" id="password-check" placeholder="请再输入密码" onblur="checkPassword()"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -487,12 +487,12 @@
                             <div class="col-sm-10">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="isEnabled" class="attr" value="true" checked>启用
+                                        <input type="radio" name="isEnabled" class="attr" value="true" checked/>启用
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="isEnabled" class="attr"  value="false">停用
+                                        <input type="radio" name="isEnabled" class="attr"  value="false"/>停用
                                     </label>
                                 </div>
                             </div>
@@ -597,7 +597,7 @@
                             <label for="name" class="col-sm-2 control-label">驾驶员姓名</label>
                             <div class="col-sm-10">
                                 <input type="hidden" name="id" id="id" class="attr"/>
-                                <input type="text" class="form-control attr" name="name" id="name" placeholder="驾驶员姓名">
+                                <input type="text" class="form-control attr" name="name" id="name" placeholder="驾驶员姓名"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -612,19 +612,19 @@
                         <div class="form-group">
                             <label for="age" class="col-sm-2 control-label">驾驶员年龄</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" name="age" id="age" placeholder="驾驶员年龄">
+                                <input type="text" class="form-control attr" name="age" id="age" placeholder="驾驶员年龄"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="mobile" class="col-sm-2 control-label">驾驶员手机号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" name="mobile" id="mobile" placeholder="驾驶员手机号">
+                                <input type="text" class="form-control attr" name="mobile" id="mobile" placeholder="驾驶员手机号"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="address" class="col-sm-2 control-label">驾驶员家庭地址</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" name="address" id="address" placeholder="驾驶员家庭地址">
+                                <input type="text" class="form-control attr" name="address" id="address" placeholder="驾驶员家庭地址"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -692,7 +692,8 @@
                         <th class="table-title">车牌号</th>
                         <th class="table-title">车型</th>
                         <th class="table-title">出车/入车</th>
-                        <th class="table-title">日期</th>
+                        <th class="table-title">出车时间</th>
+                        <th class="table-title">入车时间</th>
                         <th class="table-title">操作</th>
                     </tr>
                     </thead>
@@ -733,21 +734,14 @@
                         <div class="form-group">
                             <label for="busNum" class="col-sm-2 control-label">车牌号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" readonly="readonly" name="busNum" id="busNum" placeholder="车牌号">
+                                <input type="text" class="form-control attr" readonly="readonly" name="busNum" id="busNum" placeholder="车牌号"/>
 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="busType" class="col-sm-2 control-label">车辆类型</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control attr" readonly="readonly" name="busType" id="busType" placeholder="车辆类型">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="outerOrInner" class="col-sm-2 control-label">出车/入车</label>
-                            <div class="col-sm-10">
-                                <input type="radio" name="outerOrInner" class="attr">出车</input>
-                                <input type="radio" name="outerOrInner" class="attr">入车</input>
+                                <input type="text" class="form-control attr" readonly="readonly" name="busType" id="busType" placeholder="车辆类型"/>
                             </div>
                         </div>
                         <div class="form-group">

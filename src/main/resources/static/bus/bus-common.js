@@ -15,7 +15,7 @@ $(function (){
 })
 function initPage() {
     $(".delete").on('click', function () {
-        let id = $(this).parents("tr").find('input[type=hidden]').eq(0).val();
+        let id = $(this).parents("tr").find('input[type=checkbox]').eq(0).val();
         HttpUtil.delete(url,id);
     })
     $(".add").on('click',function (){
@@ -23,6 +23,11 @@ function initPage() {
             item.value = null;
         })
         $('#add').modal('show');
+    })
+    $('.search').on('click',function () {
+        var value = $(this).parent().prev().val();
+        let key = $('#query').val();
+        HttpUtil.getAll(url+"?"+key+"="+value,pageSize,pageNum);
     })
     $(".am-btn-xs").on('click', function () {
         let val = $(this).text();
@@ -39,6 +44,8 @@ const HttpUtil = {
         $.get(url,function (res){
             $('.attr').each(function (i, item) {
                 for(let k in res.data ){
+                    let name = item.name;
+                    console.log(name)
                     //遍历packJson 对象的每个key/value对,k为key
                     if (k !== item.name) {
                         continue;
@@ -122,7 +129,9 @@ const HttpUtil = {
             url: url,
             success: function (res) {
                 alert(res.message);
-                window.location.href = successUrl;
+                if(res.code === 0){
+                    window.location.href = successUrl;
+                }
             }
         })
     },
@@ -138,7 +147,7 @@ const HttpUtil = {
         })
     },
     showEditTable: function (e){
-        const id = $(e).parents('tr').find('input[type=hidden]').eq(0).val();
+        const id = $(e).parents('tr').find('input[type=checkbox]').eq(0).val();
         $('#id').val(id);
         this.get(url+"/"+id);
         $("#add").modal('show');

@@ -4,15 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.busmanage.common.ApiResult;
-import com.example.busmanage.dto.BusOnlineInput;
+import com.example.busmanage.dto.BusOnlineDTO;
 import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.entity.BusOnline;
 import com.example.busmanage.service.impl.BusonlineServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Calendar;
 
 @RequestMapping("api/busonline")
 @RestController
@@ -24,8 +22,8 @@ public class BusonlineController {
     }
 
     @PostMapping
-    public ApiResult save(@RequestBody @Validated BusOnlineInput busOnlineInput) {
-        busonlineServiceImpl.saveBusOnline(busOnlineInput);
+    public ApiResult save(@RequestBody @Validated BusOnlineDTO busOnlineDTO) {
+        busonlineServiceImpl.saveBusOnline(busOnlineDTO);
         return ApiResult.ok();
     }
 
@@ -35,18 +33,18 @@ public class BusonlineController {
         BusOnline busOnline = new BusOnline();
         BeanUtils.copyProperties(queryDto, busOnline);
         QueryWrapper<BusOnline> queryWrapper = new QueryWrapper<>(busOnline);
-        busonlineServiceImpl.page(page,queryWrapper);
+        busonlineServiceImpl.pageWithCompose(page,queryWrapper);
         return ApiResult.successPages(page);
     }
 
     @DeleteMapping("{id}")
     public ApiResult del(@PathVariable String id){
-        busonlineServiceImpl.removeById(id);
+        busonlineServiceImpl.deleteById(id);
         return ApiResult.ok();
     }
 
     @GetMapping("{id}")
     public ApiResult getById(@PathVariable String id){
-        return ApiResult.ok(busonlineServiceImpl.getById(id));
+        return ApiResult.ok(busonlineServiceImpl.getComposeById(id));
     }
 }
