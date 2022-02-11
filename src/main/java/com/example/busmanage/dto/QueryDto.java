@@ -3,6 +3,8 @@ package com.example.busmanage.dto;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.util.Map;
+
 @Data
 @Accessors(chain = true)
 public class QueryDto {
@@ -14,5 +16,6 @@ public class QueryDto {
     private String mobile;
     private Boolean online;
     private String busNum;
+    private Map<String,Object> param;
 
 }

@@ -1,5 +1,6 @@
 package com.example.busmanage.entity;
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.example.busmanage.enums.ColorEnum;
@@ -30,4 +31,9 @@ public class Bus {
     @Column(columnDefinition = "varchar(10) not null")
     private BusStatus busStatus;
     private Boolean online;
+
+    @Override
+    public String toString() {
+        return JSONObject.toJSONString(this);
+    }
 }

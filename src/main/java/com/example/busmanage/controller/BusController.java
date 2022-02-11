@@ -1,5 +1,6 @@
 package com.example.busmanage.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -7,9 +8,12 @@ import com.example.busmanage.common.ApiResult;
 import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.entity.Bus;
 import com.example.busmanage.service.impl.BusServiceImpl;
+import com.example.busmanage.util.JsonUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RequestMapping("api/bus")
 @RestController
@@ -28,11 +32,10 @@ public class BusController {
     }
 
     @GetMapping
-    public ApiResult get(QueryDto queryDto) {
-        IPage<Bus> page = new Page<>(queryDto.getPn(), queryDto.getPs());
-        Bus bus = new Bus();
-        BeanUtils.copyProperties(queryDto, bus);
-        QueryWrapper<Bus> queryWrapper = new QueryWrapper<>(bus);
+    public ApiResult get(Bus bus, long pn, long ps) {
+        IPage<Bus> page = new Page<>(pn, ps);
+        QueryWrapper<Bus> queryWrapper = new QueryWrapper<>();
+        queryWrapper.allEq(JSONObject.parseObject(JsonUtils.toUnderlineJSONString(bus)),false);
         busService.page(page, queryWrapper);
         return ApiResult.successPages(page);
     }
