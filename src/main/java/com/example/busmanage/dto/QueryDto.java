@@ -9,13 +9,10 @@ import java.util.Map;
 @Accessors(chain = true)
 public class QueryDto {
     private int pn = 0;
-    private int ps = 10;
+    private int limit = 10;
     private String search;
+    private String type;
     private String name;
     private String username;
-    private String mobile;
-    private Boolean online;
-    private String busNum;
-    private Map<String,Object> param;
 
 }

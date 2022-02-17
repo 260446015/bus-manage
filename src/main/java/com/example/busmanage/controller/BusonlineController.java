@@ -29,7 +29,7 @@ public class BusonlineController {
 
     @GetMapping
     public ApiResult get(QueryDto queryDto) {
-        IPage<BusOnline> page = new Page<>(queryDto.getPn(),queryDto.getPs());
+        IPage<BusOnline> page = new Page<>(queryDto.getPn(),queryDto.getLimit());
         BusOnline busOnline = new BusOnline();
         BeanUtils.copyProperties(queryDto, busOnline);
         QueryWrapper<BusOnline> queryWrapper = new QueryWrapper<>(busOnline);

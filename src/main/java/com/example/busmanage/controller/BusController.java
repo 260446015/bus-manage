@@ -10,10 +10,12 @@ import com.example.busmanage.entity.Bus;
 import com.example.busmanage.service.impl.BusServiceImpl;
 import com.example.busmanage.util.JsonUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RequestMapping("api/bus")
 @RestController
@@ -32,10 +34,12 @@ public class BusController {
     }
 
     @GetMapping
-    public ApiResult get(Bus bus, long pn, long ps) {
-        IPage<Bus> page = new Page<>(pn, ps);
+    public ApiResult get(QueryDto queryDto) {
+        IPage<Bus> page = new Page<>(queryDto.getPn(), queryDto.getLimit());
         QueryWrapper<Bus> queryWrapper = new QueryWrapper<>();
-        queryWrapper.allEq(JSONObject.parseObject(JsonUtils.toUnderlineJSONString(bus)),false);
+        if(!StringUtils.isEmpty(queryDto.getType())){
+            queryWrapper.like(queryDto.getType(), queryDto.getSearch());
+        }
         busService.page(page, queryWrapper);
         return ApiResult.successPages(page);
     }

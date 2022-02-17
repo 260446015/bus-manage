@@ -68,7 +68,7 @@ const HttpUtil = {
         })
     },
     getAll: function (url,_pageSize,_pageNum){
-        let req = {"ps": _pageSize, "pn": _pageNum};
+        let req = {"limit": _pageSize, "pn": _pageNum};
         $.ajax({
             type: 'get',
             data: req,

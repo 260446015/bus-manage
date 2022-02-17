@@ -9,6 +9,7 @@ import com.example.busmanage.dto.vo.UserVo;
 import com.example.busmanage.entity.User;
 import com.example.busmanage.service.impl.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -18,16 +19,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserServiceImpl userService;
-    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserServiceImpl userService, PasswordEncoder passwordEncoder) {
+    public UserController(UserServiceImpl userService) {
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @PostMapping
     public ApiResult save(@RequestBody @Validated User user) {
-        String encode = passwordEncoder.encode(user.getPassword());
+        String encode = PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(user.getPassword());
         user.setPassword(encode);
         user.setIsAccountNonExpired(false).setIsAccountNonLocked(false)
                 .setIsCredentialsNonExpired(false).setAuthorities("all");
@@ -37,7 +36,7 @@ public class UserController {
 
     @GetMapping
     public ApiResult get(QueryDto queryDto) {
-        IPage<UserVo> page = new Page<>(queryDto.getPn(),queryDto.getPs());
+        IPage<UserVo> page = new Page<>(queryDto.getPn(),queryDto.getLimit());
         User user = new User();
         BeanUtils.copyProperties(queryDto, user);
         QueryWrapper<User> queryWrapper = new QueryWrapper<>(user);

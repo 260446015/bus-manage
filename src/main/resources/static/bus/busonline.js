@@ -79,7 +79,7 @@ function selectBus(){
 }
 
 HttpUtil.getAll = function (url,_pageSize,_pageNum) {
-    let req = {"ps": _pageSize, "pn": _pageNum};
+    let req = {"limit": _pageSize, "pn": _pageNum};
     $("#query").children().each(function (i, item) {
         if (item.selected) {
             req[item.value] = $('#search').val();

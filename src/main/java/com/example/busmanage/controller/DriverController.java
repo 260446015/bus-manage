@@ -32,7 +32,7 @@ public class DriverController {
 
     @GetMapping
     public ApiResult get(QueryDto queryDto) {
-        IPage<Driver> page = new Page<>(queryDto.getPn(),queryDto.getPs());
+        IPage<Driver> page = new Page<>(queryDto.getPn(),queryDto.getLimit());
         Driver driver = new Driver();
         BeanUtils.copyProperties(queryDto, driver);
         QueryWrapper<Driver> queryWrapper = new QueryWrapper<>(driver);
