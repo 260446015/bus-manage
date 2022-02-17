@@ -27,7 +27,7 @@ function initPage() {
     $('.search').on('click',function () {
         var value = $(this).parent().prev().val();
         let key = $('#query').val();
-        HttpUtil.getAll(url+"?"+key+"="+value,pageSize,pageNum);
+        HttpUtil.getAll(url+"?type=bus_num&search="+value,pageSize,pageNum);
     })
     $(".am-btn-xs").on('click', function () {
         let val = $(this).text();

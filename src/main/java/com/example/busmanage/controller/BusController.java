@@ -36,7 +36,9 @@ public class BusController {
     @GetMapping
     public ApiResult get(QueryDto queryDto) {
         IPage<Bus> page = new Page<>(queryDto.getPn(), queryDto.getLimit());
-        QueryWrapper<Bus> queryWrapper = new QueryWrapper<>();
+        Bus bus = new Bus();
+        BeanUtils.copyProperties(queryDto,bus);
+        QueryWrapper<Bus> queryWrapper = new QueryWrapper<>(bus);
         if(!StringUtils.isEmpty(queryDto.getType())){
             queryWrapper.like(queryDto.getType(), queryDto.getSearch());
         }

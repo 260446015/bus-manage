@@ -7,6 +7,7 @@ import com.example.busmanage.common.ApiResult;
 import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.dto.vo.UserVo;
 import com.example.busmanage.entity.User;
+import com.example.busmanage.exception.BusinessException;
 import com.example.busmanage.service.impl.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -30,7 +31,11 @@ public class UserController {
         user.setPassword(encode);
         user.setIsAccountNonExpired(false).setIsAccountNonLocked(false)
                 .setIsCredentialsNonExpired(false).setAuthorities("all");
-        userService.saveOrUpdate(user);
+        try {
+            userService.saveOrUpdate(user);
+        } catch (Exception e) {
+            throw new BusinessException("用户名重复");
+        }
         return ApiResult.ok();
     }
 
