@@ -12,12 +12,9 @@ $(function (){
     pageSize = 10;
     pageNum = 1;
     HttpUtil.getAll(url,pageSize,pageNum);
+    initPage();
 })
 function initPage() {
-    $(".delete").on('click', function () {
-        let id = $(this).parents("tr").find('input[type=checkbox]').eq(0).val();
-        HttpUtil.delete(url,id);
-    })
     $(".add").on('click',function (){
         $('.attr').each(function (i,item){
             item.value = null;
@@ -25,9 +22,9 @@ function initPage() {
         $('#add').modal('show');
     })
     $('.search').on('click',function () {
-        var value = $(this).parent().prev().val();
+        let value = $(this).parent().prev().val();
         let key = $('#query').val();
-        HttpUtil.getAll(url+"?type=bus_num&search="+value,pageSize,pageNum);
+        HttpUtil.getAll(url+"?"+key+"="+value,pageSize,pageNum);
     })
     $(".am-btn-xs").on('click', function () {
         let val = $(this).text();
@@ -99,7 +96,10 @@ const HttpUtil = {
                     } else {
                         $('#page').html("");
                     }
-                    initPage();
+                    $(".delete").on('click', function () {
+                        let id = $(this).parents("tr").find('input[type=checkbox]').eq(0).val();
+                        HttpUtil.delete(url,id);
+                    })
                 }
             }
         })

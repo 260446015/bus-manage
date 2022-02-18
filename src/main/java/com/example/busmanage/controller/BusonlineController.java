@@ -8,7 +8,6 @@ import com.example.busmanage.dto.BusOnlineDTO;
 import com.example.busmanage.dto.QueryDto;
 import com.example.busmanage.entity.BusOnline;
 import com.example.busmanage.service.impl.BusonlineServiceImpl;
-import org.springframework.beans.BeanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,23 +27,20 @@ public class BusonlineController {
     }
 
     @GetMapping
-    public ApiResult get(QueryDto queryDto) {
-        IPage<BusOnline> page = new Page<>(queryDto.getPn(),queryDto.getLimit());
-        BusOnline busOnline = new BusOnline();
-        BeanUtils.copyProperties(queryDto, busOnline);
-        QueryWrapper<BusOnline> queryWrapper = new QueryWrapper<>(busOnline);
-        busonlineServiceImpl.pageWithCompose(page,queryWrapper);
+    public ApiResult get(QueryDto<BusOnline> queryDto) {
+        IPage<BusOnline> page = new Page<>(queryDto.getPn(), queryDto.getLimit());
+        busonlineServiceImpl.pageWithCompose(page, queryDto.buildQuery());
         return ApiResult.successPages(page);
     }
 
     @DeleteMapping("{id}")
-    public ApiResult del(@PathVariable String id){
+    public ApiResult del(@PathVariable String id) {
         busonlineServiceImpl.deleteById(id);
         return ApiResult.ok();
     }
 
     @GetMapping("{id}")
-    public ApiResult getById(@PathVariable String id){
+    public ApiResult getById(@PathVariable String id) {
         return ApiResult.ok(busonlineServiceImpl.getComposeById(id));
     }
 }

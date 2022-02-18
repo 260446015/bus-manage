@@ -11,7 +11,6 @@ import com.example.busmanage.exception.BusinessException;
 import com.example.busmanage.service.impl.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,25 +39,24 @@ public class UserController {
     }
 
     @GetMapping
-    public ApiResult get(QueryDto queryDto) {
-        IPage<UserVo> page = new Page<>(queryDto.getPn(),queryDto.getLimit());
-        User user = new User();
-        BeanUtils.copyProperties(queryDto, user);
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>(user);
-        userService.pageCustom(page,queryWrapper);
+    public ApiResult get(QueryDto<User> queryDto) {
+        IPage<UserVo> page = new Page<>(queryDto.getPn(), queryDto.getLimit());
+        IPage<User> page2 = new Page<>(queryDto.getPn(), queryDto.getLimit());
+        userService.pageCustom(page, queryDto.buildQuery());
+//        userService.page(page2, queryDto.buildQuery());
         return ApiResult.successPages(page);
     }
 
     @GetMapping("{id}")
-    public ApiResult getById(@PathVariable String id){
+    public ApiResult getById(@PathVariable String id) {
         User byId = userService.getById(id);
         UserVo userVo = new UserVo();
-        BeanUtils.copyProperties(byId,userVo);
+        BeanUtils.copyProperties(byId, userVo);
         return ApiResult.ok(userVo);
     }
 
     @DeleteMapping("{id}")
-    public ApiResult del(@PathVariable String id){
+    public ApiResult del(@PathVariable String id) {
         userService.removeById(id);
         return ApiResult.ok();
     }

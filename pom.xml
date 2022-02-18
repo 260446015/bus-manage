@@ -90,6 +90,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
